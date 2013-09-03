@@ -5,9 +5,6 @@ Why: Chef and puppet seems overkill and overwhelming for me
 
 This is a collection of recipes for provisioning Vagrant Boxes.
 
-
-[@StanAngeloff](https://github.com/StanAngeloff/vagrant-shell-scripts), the ubuntu distro script is from his repo.
-
 COPYRIGHT
 =========
 
