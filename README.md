@@ -5,7 +5,7 @@ Why: Chef and puppet seems overkill and overwhelming for me
 
 This is a collection of recipes for provisioning Vagrant Boxes.
 
-You just plug your recipes on `provision.sh` file, with this config to provisioner in Vagrant:
+You just plug your recipes on `provision.sh` file, put: `require 'irb'` on the top of Vagrantfile, and this config to provisioner in Vagrantfile too:
 
 ```ruby
 config.vm.provision :shell do |shell|
