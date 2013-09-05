@@ -23,6 +23,6 @@ if [ ! -f /home/vagrant/provision/ruby ]; then
     export PATH="$GEM_PATH/bin:$PATH"
     export SPRING_TMP_PATH="/home/vagrant/spring_tmp" # Temp PATH for spring' >> /home/vagrant/.bashrc
 
-  touch /home/vagrant/provision/ruby
+  su -c "touch /home/vagrant/provision/ruby" vagrant
 
 fi

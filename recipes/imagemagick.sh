@@ -8,5 +8,5 @@ if [ ! -f /home/vagrant/provision/imagemagick ]; then
     libmagickcore-dev \
     libmagickwand-dev
 
-  touch /home/vagrant/provision/imagemagick
+  su -c "touch /home/vagrant/provision/imagemagick" vagrant
 fi

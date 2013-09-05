@@ -7,6 +7,6 @@ if [ ! -f /home/vagrant/provision/nodejs ]; then
   sudo apt-get update
   sudo apt-get install -y nodejs
 
-  touch /home/vagrant/provision/nodejs
+  su -c "touch /home/vagrant/provision/nodejs" vagrant
 
 fi

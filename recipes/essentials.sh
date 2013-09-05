@@ -11,6 +11,6 @@ if [ ! -f /home/vagrant/provision/essentials ]; then
     build-essential \
     python-software-properties
 
-  touch /home/vagrant/essentials
+  su -c "touch /home/vagrant/provision/essentials" vagrant
 
 fi

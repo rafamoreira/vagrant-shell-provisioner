@@ -16,6 +16,6 @@ if [ ! -f /home/vagrant/provision/postgres ]; then
   sudo -u postgres psql -c "create user rmc with password 'secret';"
   sudo -u postgres psql -c "alter user rmc with superuser;"
 
-  touch /home/vagrant/provision/postgres
+  su -c "touch /home/vagrant/provision/postgres" vagrant
 
 fi
