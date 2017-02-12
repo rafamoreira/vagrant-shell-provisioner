@@ -9,7 +9,7 @@ if [ ! -f /home/vagrant/provision/essentials ]; then
     curl		\
     wget		\
     build-essential \
-    python-software-properties
+    software-properties-common
 
   su -c "touch /home/vagrant/provision/essentials" vagrant
 
