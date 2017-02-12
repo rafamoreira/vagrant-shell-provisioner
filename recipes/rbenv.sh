@@ -4,21 +4,16 @@
 
 if [ ! -f /home/vagrant/provision/rbenv ]; then
 
-  su -c "curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash" vagrant
+  su -c "git clone https://github.com/rbenv/rbenv.git /home/vagrant/.rbenv" vagrant
+  su -c "git clone https://github.com/rbenv/ruby-build.git /home/vagrant/.rbenv/plugins/ruby-build" vagrant
+  su -c "git clone https://github.com/rkh/rbenv-whatis.git /home/vagrant/.rbenv/plugins/rbenv-whatis" vagrant
+  su -c "git clone https://github.com/rkh/rbenv-use.git /home/vagrant/.rbenv/plugins/rbenv-use" vagrant
 
   echo '
-export RBENV_ROOT="${HOME}/.rbenv"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi' >> /home/vagrant/.bashrc
-
-  su -c "/home/vagrant/.rbenv/bin/rbenv bootstrap-ubuntu-12-04" vagrant
-
-  su -c "/home/vagrant/.rbenv/bin/rbenv install 2.0.0-p247" vagrant
-
-  su -c "/home/vagrant/.rbenv/bin/rbenv global 2.0.0-p247" vagrant
+eval "$(rbenv init -)"
+' >> /home/vagrant/.bash_profile
 
   su -c "touch /home/vagrant/provision/rbenv" vagrant
 fi
