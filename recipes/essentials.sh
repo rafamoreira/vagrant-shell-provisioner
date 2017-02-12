@@ -9,8 +9,15 @@ if [ ! -f /home/vagrant/provision/essentials ]; then
     curl		\
     wget		\
     build-essential \
-    software-properties-common
-
+    software-properties-common \
+    tklib \
+    zlib1g-dev \
+    libssl-dev \
+    libreadline-gplv2-dev \
+    libxml2 \
+    libxml2-dev \
+    libxslt1-dev
+    
   su -c "touch /home/vagrant/provision/essentials" vagrant
 
 fi
