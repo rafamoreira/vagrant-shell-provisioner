@@ -2,9 +2,7 @@
 
 if [ ! -f /home/vagrant/provision/essentials ]; then
 
-  sudo apt-get update
-
-  sudo apt-get install -y \
+  sudo apt-get install -y -qq \
     git-core	\
     curl		\
     wget		\
@@ -16,7 +14,8 @@ if [ ! -f /home/vagrant/provision/essentials ]; then
     libreadline-gplv2-dev \
     libxml2 \
     libxml2-dev \
-    libxslt1-dev
+    libxslt1-dev \
+    vim 
     
   su -c "touch /home/vagrant/provision/essentials" vagrant
 
