@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+
 dir=/vagrant
 www=/var/www
 
+# refer to this location for where it will pick the target links 1 link per line
 link_refs=/vagrant/link.txt
 
 #(original location, destiny location)
@@ -14,6 +16,8 @@ create_symlinks (){
     echo "already exists ln -s $1 $2"
   fi
 }
+
+#(original location, destiny location)
 create_apache_symlinks (){
   if [ ! -L $2 ]; then
     ln -s $1 $2

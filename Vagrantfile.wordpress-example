@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# wordpress example
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-16.04"
+
+  #config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "public_network", ip: "192.168.1.100"
+
+  require "erb"
+  config.vm.provision :shell do |shell|
+    relative = "./vagrant-shell-provisioner/"
+    script = "provision-wordpress.sh"
+	  shell.inline = ERB.new("<% def import(file); File.read('#{relative}' + file); end %>" + File.read("#{relative}#{script}")).result
+  end
+
+  config.vm.provision "shell", path: "./vagrant-shell-provisioner/after-boot.sh", run: "always"
+end
