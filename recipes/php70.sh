@@ -7,6 +7,6 @@ if [ ! -f /home/vagrant/provision/php70 ]; then
 
   sudo service apache2 restart
 
-  echo "<?php phpinfo(); ?>" >> /var/www/index.php
+  sudo echo "<?php phpinfo(); ?>" >> /var/www/html/index.php
 
 fi
