@@ -15,7 +15,7 @@ if [ ! -f /home/vagrant/provision/essentials ]; then
     libxml2 \
     libxml2-dev \
     libxslt1-dev \
-    vim 
+    vim
     
   su -c "touch /home/vagrant/provision/essentials" vagrant
 
